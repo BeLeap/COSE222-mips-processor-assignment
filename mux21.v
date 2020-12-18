@@ -1,7 +1,7 @@
 module mux21(
     input wire [31:0] D0, D1,
     input wire S,
-    output [31:0] Y
+    output reg [31:0] Y
     );
 
     always @(D0 or D1 or S)
