@@ -12,8 +12,6 @@ module cpu (
     wire [31:0] jump_addr;
 
     wire [31:0] write_data;
-    wire [31:0] read1;
-    wire [31:0] read2;
 
     // clock divider
     clk_dll ClockDivider(rst, clk, out_clk);
@@ -46,5 +44,12 @@ module cpu (
 
     mux21 m1(rt, rd, RegDst, write_reg);
 
+    wire [31:0] read1;
+    wire [31:0] read2;
+
     register r1(rst, out_clk, rs, rt, write_reg, write_data, RegWrite, read1, read2);
+
+    wire [31:0] sign_extended;
+
+    sign_ex se(inst[15:0], sign_extended);
 endmodule
