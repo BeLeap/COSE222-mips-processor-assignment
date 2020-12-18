@@ -1,0 +1,72 @@
+{C:/Users/ckdtj/Quartus Project/cpu/instruction_memory.v} {1 {vlog -work work -stats=none {C:/Users/ckdtj/Quartus Project/cpu/instruction_memory.v}
+Model Technology ModelSim - Intel FPGA Edition vlog 10.5b Compiler 2016.10 Oct  5 2016
+-- Compiling module instruction_memory
+
+Top level modules:
+	instruction_memory
+
+} {} {}} {C:/Users/ckdtj/Quartus Project/cpu/aludec.v} {1 {vlog -work work -stats=none {C:/Users/ckdtj/Quartus Project/cpu/aludec.v}
+Model Technology ModelSim - Intel FPGA Edition vlog 10.5b Compiler 2016.10 Oct  5 2016
+-- Compiling module aludec
+
+Top level modules:
+	aludec
+
+} {} {}} {C:/Users/ckdtj/Quartus Project/cpu/alu_mips.v} {1 {vlog -work work -stats=none {C:/Users/ckdtj/Quartus Project/cpu/alu_mips.v}
+Model Technology ModelSim - Intel FPGA Edition vlog 10.5b Compiler 2016.10 Oct  5 2016
+-- Compiling module alu_mips
+
+Top level modules:
+	alu_mips
+
+} {} {}} {C:/Users/ckdtj/Quartus Project/cpu/tb_aludec.v} {1 {vlog -work work -stats=none {C:/Users/ckdtj/Quartus Project/cpu/tb_aludec.v}
+Model Technology ModelSim - Intel FPGA Edition vlog 10.5b Compiler 2016.10 Oct  5 2016
+-- Compiling module tb_aludec
+
+Top level modules:
+	tb_aludec
+
+} {} {}} {C:/Users/ckdtj/Quartus Project/cpu/tb_alu_mips.v} {1 {vlog -work work -stats=none {C:/Users/ckdtj/Quartus Project/cpu/tb_alu_mips.v}
+Model Technology ModelSim - Intel FPGA Edition vlog 10.5b Compiler 2016.10 Oct  5 2016
+-- Compiling module tb_alu_mips
+
+Top level modules:
+	tb_alu_mips
+
+} {} {}} {C:/Users/ckdtj/Quartus Project/cpu/pc.v} {1 {vlog -work work -stats=none {C:/Users/ckdtj/Quartus Project/cpu/pc.v}
+Model Technology ModelSim - Intel FPGA Edition vlog 10.5b Compiler 2016.10 Oct  5 2016
+-- Compiling module pc
+
+Top level modules:
+	pc
+
+} {} {}} {C:/Users/ckdtj/Quartus Project/cpu/tb_op.v} {0 {vlog -work work -stats=none {C:/Users/ckdtj/Quartus Project/cpu/tb_op.v}
+Model Technology ModelSim - Intel FPGA Edition vlog 10.5b Compiler 2016.10 Oct  5 2016
+-- Compiling module tb_op
+** Error: C:/Users/ckdtj/Quartus Project/cpu/tb_op.v(24): (vlog-2110) Illegal reference to net "pc".
+** Error: C:/Users/ckdtj/Quartus Project/cpu/tb_op.v(25): (vlog-2110) Illegal reference to net "pc".
+** Error: C:/Users/ckdtj/Quartus Project/cpu/tb_op.v(26): (vlog-2110) Illegal reference to net "pc".
+
+} {4.0 7.0} {}} {C:/Users/ckdtj/Quartus Project/cpu/sign_ex.v} {1 {vlog -work work -stats=none {C:/Users/ckdtj/Quartus Project/cpu/sign_ex.v}
+Model Technology ModelSim - Intel FPGA Edition vlog 10.5b Compiler 2016.10 Oct  5 2016
+-- Compiling module sign_ex
+
+Top level modules:
+	sign_ex
+
+} {} {}} {C:/Users/ckdtj/Quartus Project/cpu/control.v} {0 {vlog -work work -stats=none {C:/Users/ckdtj/Quartus Project/cpu/control.v}
+Model Technology ModelSim - Intel FPGA Edition vlog 10.5b Compiler 2016.10 Oct  5 2016
+-- Compiling module control
+** Error: C:/Users/ckdtj/Quartus Project/cpu/control.v(1): (vlog-2730) Undefined variable: 'rst'.
+** Error: C:/Users/ckdtj/Quartus Project/cpu/control.v(1): Identifier must be declared with a port mode: rst.
+** Error: C:/Users/ckdtj/Quartus Project/cpu/control.v(1): (vlog-2730) Undefined variable: 'clk'.
+** Error: C:/Users/ckdtj/Quartus Project/cpu/control.v(1): Identifier must be declared with a port mode: clk.
+
+} {4.0 8.0} {}} {C:/Users/ckdtj/Quartus Project/cpu/clk_dll.v} {1 {vlog -work work -stats=none {C:/Users/ckdtj/Quartus Project/cpu/clk_dll.v}
+Model Technology ModelSim - Intel FPGA Edition vlog 10.5b Compiler 2016.10 Oct  5 2016
+-- Compiling module clk_dll
+
+Top level modules:
+	clk_dll
+
+} {} {}}
