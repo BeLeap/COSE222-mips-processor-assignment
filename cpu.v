@@ -60,4 +60,9 @@ module cpu (
     wire [2:0] alu_control;
 
     aludec ALUControl(funct, ALUOp, alu_control);
+
+    wire zero;
+    wire [31:0] ALUResult;
+
+    alu_mips ALU(read1, alu_source, alu_control, ALUResult, zero);
 endmodule
