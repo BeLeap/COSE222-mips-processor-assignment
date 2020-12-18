@@ -1,0 +1,10 @@
+db/
+incremental_db/
+output_files/
+work/
+c5_pin_model_dump.txt
+cpu.cr.mti
+cpu.mpf
+cpu.qpf
+cpu.qsf
+cpu.qws
