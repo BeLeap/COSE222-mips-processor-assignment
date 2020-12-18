@@ -38,7 +38,7 @@ module cpu (
     assign funct = inst[5:0];
 
     wire RegDst, Jump, Branch, MemRead, MemToReg, ALUOp, MemWrite, ALUSrc, RegWrite;
-    control Control(opcode, RegDst, Jump, Branch, MemRead, MemToReg, ALUSrc, RegWrite);
+    control Control(opcode, RegDst, Jump, Branch, MemRead, MemToReg, ALUOp, MemWrite, ALUSrc, RegWrite);
 
     wire [4:0] write_reg;
 
@@ -52,4 +52,12 @@ module cpu (
     wire [31:0] sign_extended;
 
     sign_ex se(inst[15:0], sign_extended);
+
+    wire [31:0] alu_source;
+
+    mux21 m2(read2, sign_extended ,ALUSrc, alu_source);
+
+    wire [2:0] alu_control;
+
+    aludec ALUControl(funct, ALUOp, alu_control);
 endmodule
