@@ -65,4 +65,9 @@ module cpu (
     wire [31:0] ALUResult;
 
     alu_mips ALU(read1, alu_source, alu_control, ALUResult, zero);
+
+    wire [31:0] read_data;
+    memory mem(ALUResult, read2, MemWrite, MemRead, read_data);
+
+    mux21 m3(read_data, ALUResult, MemToReg, write_data);
 endmodule
