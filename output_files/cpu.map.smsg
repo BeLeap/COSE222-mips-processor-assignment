@@ -1,2 +1,0 @@
-Warning (10268): Verilog HDL information at clk_dll.v(9): always construct contains both blocking and non-blocking assignments File: C:/Users/ckdtj/Quartus Project/cpu/clk_dll.v Line: 9
-Info (10281): Verilog HDL Declaration information at cpu.v(8): object "pc" differs only in case from object "PC" in the same scope File: C:/Users/ckdtj/Quartus Project/cpu/cpu.v Line: 8
