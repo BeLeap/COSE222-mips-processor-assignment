@@ -12,11 +12,14 @@ module cpu (
     wire [31:0] pc;
     pc PC(rst, out_clk, new_pc, pc);
 
+    wire [31:0] pc4;
+    assign pc4 = pc + 4;
+
     wire [31:0] inst;
     instruction_memory InstructionMemory(pc, inst);
 
-    wire [31:0] pc4;
-    assign pc4 = pc + 4;
+    wire [31:0] jump_addr;
+    assign jump_addr = (inst[25:0] << 2) + pc4[31:28];
 
     wire [5:0] opcode;
     wire [4:0] rs;
@@ -46,6 +49,9 @@ module cpu (
     wire [31:0] sign_extended;
     sign_ex se(inst[15:0], sign_extended);
 
+    wire [31:0] ALUResult2;
+    assign ALUResult2 = (sign_extended << 2) & pc4;
+
     wire [31:0] alu_source;
     mux21 m2(read2, sign_extended ,ALUSrc, alu_source);
 
@@ -54,11 +60,15 @@ module cpu (
 
     wire zero;
     wire [31:0] ALUResult;
-
     alu_mips ALU(read1, alu_source, alu_control, ALUResult, zero);
+
+    wire [31:0] new_pc_temp;
+    mux21 m4(pc4, ALUResult2, zero & Branch, new_pc_temp);
+
+    mux21 m5(new_pc_temp, jump_addr, Jump, new_pc);
 
     wire [31:0] read_data;
     memory mem(ALUResult, read2, MemWrite, MemRead, read_data);
 
-    mux21 m3(read_data, ALUResult, MemToReg, write_data);
+    mux21 m3(ALUResult, read_data, MemToReg, write_data);
 endmodule
