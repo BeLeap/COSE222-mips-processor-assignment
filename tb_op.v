@@ -19,11 +19,16 @@ clk=0;
 forever #5 clk=~clk;
 end
 
-initial
+// initial
+// begin
+// pc=0;
+// #65; pc=3;
+// #25; pc=10;
+// end
+
+always #5
 begin
-pc=0;
-#65; pc=3;
-#25; pc=10;
+	$display("newpc : %b\n", pc);
 end
 
 endmodule

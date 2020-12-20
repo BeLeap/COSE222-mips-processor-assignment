@@ -35,7 +35,8 @@ module cpu (
     assign shamt = inst[10:6];
     assign funct = inst[5:0];
 
-    wire RegDst, Jump, Branch, MemRead, MemToReg, ALUOp, MemWrite, ALUSrc, RegWrite;
+    wire RegDst, Jump, Branch, MemRead, MemToReg, MemWrite, ALUSrc, RegWrite;
+    wire [1:0] ALUOp;
     control Control(opcode, RegDst, Jump, Branch, MemRead, MemToReg, ALUOp, MemWrite, ALUSrc, RegWrite);
 
     wire [4:0] write_reg;
@@ -61,6 +62,8 @@ module cpu (
     wire zero;
     wire [31:0] ALUResult;
     alu_mips ALU(read1, alu_source, alu_control, ALUResult, zero);
+
+    assign seg = ALUResult;
 
     wire [31:0] new_pc_temp;
     mux21 m4(pc4, ALUResult2, zero & Branch, new_pc_temp);
