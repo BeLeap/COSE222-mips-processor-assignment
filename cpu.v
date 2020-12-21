@@ -71,7 +71,7 @@ module cpu (
     mux21 m5(new_pc_temp, jump_addr, Jump, new_pc);
 
     wire [31:0] read_data;
-    memory mem(ALUResult, read2, MemWrite, MemRead, read_data);
+    memory mem(rst, clk, ALUResult, read2, MemWrite, MemRead, read_data);
 
     mux21 m3(ALUResult, read_data, MemToReg, write_data);
 endmodule
