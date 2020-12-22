@@ -9,7 +9,8 @@ memory uut(rst, clk, addr, write_data, MemWrite, MemRead, read_data);
 
 initial
 begin
-    rst = 1; clk = 1; MemRead = 1; MemWrite = 0; addr = 1;
+    rst = 0;
+    #50; rst = 1; clk = 1; MemRead = 1; MemWrite = 0; addr = 1;
     #50; addr = 2;
     #50; MemRead = 0; MemWrite = 1; addr = 1; write_data = 32'b1000;
     #50; MemRead = 1; MemWrite = 0; addr = 1;
