@@ -1,7 +1,6 @@
 module cpu (
     input rst, clk,
-    // output [6:0] seg0, seg1, seg2, seg3, seg4, seg5
-    output [31:0] result, check
+    output [6:0] seg0, seg1, seg2, seg3, seg4, seg5
     );
 
     wire out_clk;
@@ -12,14 +11,14 @@ module cpu (
     wire [31:0] pc;
     pc PC(rst, out_clk, new_pc, pc);
 
-    // seg7 s1(pc[3:0], seg0);
-    // seg7 s2(pc[3:0] > 3'b9 ? pc[7:4] + 3'b1 : pc[7:4], seg1);
+    seg7 s1(pc[3:0], seg0);
+    seg7 s2(pc[7:4], seg1);
 
     wire [31:0] pc4;
     assign pc4 = pc + 4;
 
     wire [31:0] inst;
-    instruction_memory InstructionMemory(pc - 4, inst);
+    instruction_memory InstructionMemory(pc, inst);
 
     wire [31:0] jump_addr;
     assign jump_addr = {pc[31:28], inst[25:0], 2'b00};
@@ -60,12 +59,12 @@ module cpu (
     wire [31:0] alu_source;
     mux21 m2(read2, sign_extended ,ALUSrc, alu_source);
 
-    wire [2:0] alu_control;
+    wire [3:0] alu_control;
     aludec ALUControl(funct, ALUOp, alu_control);
 
     wire zero;
     wire [31:0] ALUResult;
-    alu_mips ALU(read1, alu_source, {alu_control, 1'b0}, ALUResult, zero);
+    alu_mips ALU(read1, alu_source, shamt, alu_control, ALUResult, zero);
 
     // seg7 s1(ALUResult[31:28], seg0);
     // seg7 s2(ALUResult[27:24], seg1);
@@ -73,8 +72,6 @@ module cpu (
     // seg7 s4(ALUResult[19:16], seg3);
     // seg7 s5(ALUResult[15:12], seg4);
     // seg7 s6(ALUResult[11:8], seg5);
-
-    assign result = ALUResult;
 
     wire [31:0] new_pc_temp;
     mux21 m4(pc4, ALUResult2, zero & Branch, new_pc_temp);

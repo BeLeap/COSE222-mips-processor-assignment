@@ -45,24 +45,23 @@ module register(
             mem[31] <= 32'b00000000000000000000000000000000;
         end
         else begin
-            if (read1 == 5'd0) begin
-                data1 <= 32'd0;
-            end
-            else if ((read1 == write_reg) && RegWrite) begin
-                mem[write_reg] <= write_data;
+            data1 <= 32'b0;
+            if (read1 == 5'b0) begin
+                data1 <= 32'b0;
             end
             else begin
                 data1 <= mem[read1][31:0];
             end
                 
-            if (read2 == 5'd0) begin
-                data2 <= 32'd0;
-            end
-            else if ((read2 == write_reg) && RegWrite) begin
-                mem[write_reg] <= write_data;
+            if (read2 == 5'b0) begin
+                data2 <= 32'b0;
             end
             else begin
                 data2 <= mem[read2][31:0];
+            end
+
+            if (RegWrite) begin
+                mem[write_reg] <= write_data;
             end
         end
     end

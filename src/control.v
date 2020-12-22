@@ -40,12 +40,12 @@ module control(
                 ALUSrc <= 1'b1;
                 ALUOp[1:0] <= 2'b00;
             end
-            6'b001101: begin
+            6'b001101: begin // ori
                 RegDst <= 1'b0;
                 ALUSrc <= 1'b1;
                 ALUOp[1:0] <= 2'b00;
             end
-            6'b000010: begin
+            6'b000010: begin // jump
                 RegWrite <= 1'b0;
                 Jump <= 1'b1;
             end
