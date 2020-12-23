@@ -10,7 +10,7 @@ begin
 	case(control)
 		0 : outalu=a&b;
 		1 : outalu=a|b;
-		2 : outalu=a<<shamt;
+		2 : outalu=b<<shamt;
 		4 : outalu=a+b;
 		6 : outalu=a-b;
 		7 : outalu=a<b?1:0;

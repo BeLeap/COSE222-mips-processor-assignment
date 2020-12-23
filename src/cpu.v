@@ -65,11 +65,6 @@ module cpu (
     wire [31:0] ALUResult;
     alu_mips ALU(read1, alu_source, shamt, alu_control, ALUResult, zero);
 
-    seg7 s2(ALUResult % 10, seg2);
-    seg7 s3(ALUResult / 10, seg3);
-    seg7 s4(ALUResult / 100, seg4);
-    seg7 s5(ALUResult / 1000, seg5);
-
     wire [31:0] new_pc_temp;
     mux21 m4(pc4, ALUResult2, zero & Branch, new_pc_temp);
 
@@ -79,4 +74,9 @@ module cpu (
     memory mem(rst, out_clk, ALUResult, read2, MemWrite, MemRead, read_data);
 
     mux21 m3(ALUResult, read_data, MemToReg, write_data);
+
+    seg7 s2(write_data % 10, seg2);
+    seg7 s3(write_data / 10, seg3);
+    seg7 s4(write_data / 100, seg4);
+    seg7 s5(write_data / 1000, seg5);
 endmodule

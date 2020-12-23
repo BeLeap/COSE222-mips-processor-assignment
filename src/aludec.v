@@ -6,7 +6,7 @@ output reg [3:0] alucontrol;
 always @(aluop, func)
 begin
     case(aluop)
-      2'b00: alucontrol <= 4'b0001;  // add
+      2'b00: alucontrol <= 4'b0100;  // add
       2'b01: alucontrol <= 4'b1100;  // sub
       default: case(func)          // RTYPE
           6'b100000: alucontrol <= 4'b0100; // add
