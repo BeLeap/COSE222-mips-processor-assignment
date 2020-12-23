@@ -9,7 +9,9 @@ cpu uut(rst, clk, result, chk);
 
 initial begin
     rst = 0; clk = 0;
-    #50 rst = 1;
+    #5000; rst = 1;
+    #5000; rst = 0;
+    #5000; rst = 1;
 end
 
 always #25 begin
