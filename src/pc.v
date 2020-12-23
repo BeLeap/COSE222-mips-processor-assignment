@@ -6,7 +6,7 @@ output reg [31:0] pc;
 always@(negedge rst or posedge clk)
 begin
 if (!rst)
-	pc <= 0 ;
+	pc <= -4;
 else
 	pc <= newpc ;
 end

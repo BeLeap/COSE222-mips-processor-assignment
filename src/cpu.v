@@ -12,13 +12,13 @@ module cpu (
     pc PC(rst, out_clk, new_pc, pc);
 
     seg7 s0(pc % 10, seg0);
-    seg7 s1(pc / 10, seg1);
+    seg7 s1((pc / 10) % 10, seg1);
 
     wire [31:0] pc4;
     assign pc4 = pc + 4;
 
     wire [31:0] inst;
-    instruction_memory InstructionMemory(pc - 4, inst);
+    instruction_memory InstructionMemory(pc, inst);
 
     wire [31:0] jump_addr;
     assign jump_addr = {pc[31:28], inst[25:0], 2'b00};
@@ -76,7 +76,7 @@ module cpu (
     mux21 m3(ALUResult, read_data, MemToReg, write_data);
 
     seg7 s2(write_data % 10, seg2);
-    seg7 s3(write_data / 10, seg3);
-    seg7 s4(write_data / 100, seg4);
-    seg7 s5(write_data / 1000, seg5);
+    seg7 s3((write_data / 10) % 10, seg3);
+    seg7 s4((write_data / 100) % 10, seg4);
+    seg7 s5((write_data / 1000) % 10, seg5);
 endmodule

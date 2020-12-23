@@ -44,30 +44,12 @@ module register(
             mem[30] = 32'b00000000000000000000000000000000;
             mem[31] = 32'b00000000000000000000000000000000;
         end
-        else if (RegWrite == 1'b1 && write_reg != 5'd0) begin
-            mem[write_reg] = write_data;
+        else if (RegWrite == 1 && write_reg != 0) begin
+            mem[write_reg] <= write_data;
         end
     end
 
-    reg [31:0] _data1, _data2;
-
-    always @(posedge clk) begin
-        if (read1 != 5'd0) begin
-            _data1 = mem[read1][31:0];
-        end
-        else begin
-            _data1 = 32'd0;
-        end
-
-        if (read2 != 5'd0) begin
-            _data2 = mem[read2][31:0];
-        end
-        else begin
-            _data2 = 32'd0;
-        end
-    end
-
-    assign data1 = _data1;
-    assign data2 = _data2;
+    assign data1 = (read1 == 0) ? 0 : mem[read1];
+    assign data2 = (read2 == 0) ? 0 : mem[read2];
 
 endmodule
