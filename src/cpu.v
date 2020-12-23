@@ -1,6 +1,6 @@
 module cpu (
     input rst, clk,
-    output [6:0] seg0, seg1, seg2, seg3, seg4, seg5
+    output wire [6:0] seg0, seg1, seg2, seg3, seg4, seg5
     );
 
     wire out_clk;
@@ -11,8 +11,8 @@ module cpu (
     wire [31:0] pc;
     pc PC(rst, out_clk, new_pc, pc);
 
-    seg7 s0(pc % 10, seg0);
-    seg7 s1((pc / 10) % 10, seg1);
+    seg7 s0(rst, pc % 10, seg0);
+    seg7 s1(rst, (pc / 10) % 10, seg1);
 
     wire [31:0] pc4;
     assign pc4 = pc + 4;
@@ -75,8 +75,8 @@ module cpu (
 
     mux21 m3(ALUResult, read_data, MemToReg, write_data);
 
-    seg7 s2(write_data % 10, seg2);
-    seg7 s3((write_data / 10) % 10, seg3);
-    seg7 s4((write_data / 100) % 10, seg4);
-    seg7 s5((write_data / 1000) % 10, seg5);
+    seg7 s2(rst, write_data % 10, seg2);
+    seg7 s3(rst, (write_data / 10) % 10, seg3);
+    seg7 s4(rst, (write_data / 100) % 10, seg4);
+    seg7 s5(rst, (write_data / 1000) % 10, seg5);
 endmodule
