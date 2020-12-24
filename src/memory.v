@@ -12,7 +12,7 @@ module memory(
             $readmemb("./memory.mem", mem);
         end
         else if (MemWrite) begin
-                mem[addr - 1] <= write_data;
+                mem[addr] <= write_data;
         end
     end
 
