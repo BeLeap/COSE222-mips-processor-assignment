@@ -1,0 +1,135 @@
+{C:/Users/ckdtj/Quartus Project/cpu/test/tb_alu_mips.v} {1 {vlog -work work -stats=none {C:/Users/ckdtj/Quartus Project/cpu/test/tb_alu_mips.v}
+Model Technology ModelSim - Intel FPGA Edition vlog 10.5b Compiler 2016.10 Oct  5 2016
+-- Compiling module tb_alu_mips
+
+Top level modules:
+	tb_alu_mips
+
+} {} {}} {C:/Users/ckdtj/Quartus Project/cpu/src/cpu.v} {1 {vlog -work work -stats=none {C:/Users/ckdtj/Quartus Project/cpu/src/cpu.v}
+Model Technology ModelSim - Intel FPGA Edition vlog 10.5b Compiler 2016.10 Oct  5 2016
+-- Compiling module cpu
+
+Top level modules:
+	cpu
+
+} {} {}} {C:/Users/ckdtj/Quartus Project/cpu/src/adder.v} {1 {vlog -work work -stats=none {C:/Users/ckdtj/Quartus Project/cpu/src/adder.v}
+Model Technology ModelSim - Intel FPGA Edition vlog 10.5b Compiler 2016.10 Oct  5 2016
+-- Compiling module adder
+
+Top level modules:
+	adder
+
+} {} {}} {C:/Users/ckdtj/Quartus Project/cpu/src/alu_mips.v} {1 {vlog -work work -stats=none {C:/Users/ckdtj/Quartus Project/cpu/src/alu_mips.v}
+Model Technology ModelSim - Intel FPGA Edition vlog 10.5b Compiler 2016.10 Oct  5 2016
+-- Compiling module alu_mips
+
+Top level modules:
+	alu_mips
+
+} {} {}} {C:/Users/ckdtj/Quartus Project/cpu/src/pc.v} {1 {vlog -work work -stats=none {C:/Users/ckdtj/Quartus Project/cpu/src/pc.v}
+Model Technology ModelSim - Intel FPGA Edition vlog 10.5b Compiler 2016.10 Oct  5 2016
+-- Compiling module pc
+
+Top level modules:
+	pc
+
+} {} {}} {C:/Users/ckdtj/Quartus Project/cpu/test/tb_aludec.v} {1 {vlog -work work -stats=none {C:/Users/ckdtj/Quartus Project/cpu/test/tb_aludec.v}
+Model Technology ModelSim - Intel FPGA Edition vlog 10.5b Compiler 2016.10 Oct  5 2016
+-- Compiling module tb_aludec
+
+Top level modules:
+	tb_aludec
+
+} {} {}} {C:/Users/ckdtj/Quartus Project/cpu/test/tb_op.v} {1 {vlog -work work -stats=none {C:/Users/ckdtj/Quartus Project/cpu/test/tb_op.v}
+Model Technology ModelSim - Intel FPGA Edition vlog 10.5b Compiler 2016.10 Oct  5 2016
+-- Compiling module tb_op
+
+Top level modules:
+	tb_op
+
+} {} {}} {C:/Users/ckdtj/Quartus Project/cpu/test/tb_cpu.v} {1 {vlog -work work -stats=none {C:/Users/ckdtj/Quartus Project/cpu/test/tb_cpu.v}
+Model Technology ModelSim - Intel FPGA Edition vlog 10.5b Compiler 2016.10 Oct  5 2016
+-- Compiling module tb_cpu
+
+Top level modules:
+	tb_cpu
+
+} {} {}} {C:/Users/ckdtj/Quartus Project/cpu/src/sign_ex.v} {1 {vlog -work work -stats=none {C:/Users/ckdtj/Quartus Project/cpu/src/sign_ex.v}
+Model Technology ModelSim - Intel FPGA Edition vlog 10.5b Compiler 2016.10 Oct  5 2016
+-- Compiling module sign_ex
+
+Top level modules:
+	sign_ex
+
+} {} {}} {C:/Users/ckdtj/Quartus Project/cpu/src/seg7.v} {1 {vlog -work work -stats=none {C:/Users/ckdtj/Quartus Project/cpu/src/seg7.v}
+Model Technology ModelSim - Intel FPGA Edition vlog 10.5b Compiler 2016.10 Oct  5 2016
+-- Compiling module seg7
+
+Top level modules:
+	seg7
+
+} {} {}} {C:/Users/ckdtj/Quartus Project/cpu/test/tb_memory.v} {1 {vlog -work work -stats=none {C:/Users/ckdtj/Quartus Project/cpu/test/tb_memory.v}
+Model Technology ModelSim - Intel FPGA Edition vlog 10.5b Compiler 2016.10 Oct  5 2016
+-- Compiling module tb_memory
+
+Top level modules:
+	tb_memory
+
+} {} {}} {C:/Users/ckdtj/Quartus Project/cpu/src/aludec.v} {1 {vlog -work work -stats=none {C:/Users/ckdtj/Quartus Project/cpu/src/aludec.v}
+Model Technology ModelSim - Intel FPGA Edition vlog 10.5b Compiler 2016.10 Oct  5 2016
+-- Compiling module aludec
+
+Top level modules:
+	aludec
+
+} {} {}} {C:/Users/ckdtj/Quartus Project/cpu/src/control.v} {2 {vlog -work work -stats=none {C:/Users/ckdtj/Quartus Project/cpu/src/control.v}
+Model Technology ModelSim - Intel FPGA Edition vlog 10.5b Compiler 2016.10 Oct  5 2016
+-- Compiling module control
+** Warning: C:/Users/ckdtj/Quartus Project/cpu/src/control.v(36): (vlog-2600) [RDGN] - Redundant digits in numeric literal.
+
+Top level modules:
+	control
+
+} {} {}} {C:/Users/ckdtj/Quartus Project/cpu/src/memory.v} {1 {vlog -work work -stats=none {C:/Users/ckdtj/Quartus Project/cpu/src/memory.v}
+Model Technology ModelSim - Intel FPGA Edition vlog 10.5b Compiler 2016.10 Oct  5 2016
+-- Compiling module memory
+
+Top level modules:
+	memory
+
+} {} {}} {C:/Users/ckdtj/Quartus Project/cpu/test/tb_register.v} {1 {vlog -work work -stats=none {C:/Users/ckdtj/Quartus Project/cpu/test/tb_register.v}
+Model Technology ModelSim - Intel FPGA Edition vlog 10.5b Compiler 2016.10 Oct  5 2016
+-- Compiling module tb_register
+
+Top level modules:
+	tb_register
+
+} {} {}} {C:/Users/ckdtj/Quartus Project/cpu/src/instruction_memory.v} {1 {vlog -work work -stats=none {C:/Users/ckdtj/Quartus Project/cpu/src/instruction_memory.v}
+Model Technology ModelSim - Intel FPGA Edition vlog 10.5b Compiler 2016.10 Oct  5 2016
+-- Compiling module instruction_memory
+
+Top level modules:
+	instruction_memory
+
+} {} {}} {C:/Users/ckdtj/Quartus Project/cpu/src/register.v} {1 {vlog -work work -stats=none {C:/Users/ckdtj/Quartus Project/cpu/src/register.v}
+Model Technology ModelSim - Intel FPGA Edition vlog 10.5b Compiler 2016.10 Oct  5 2016
+-- Compiling module register
+
+Top level modules:
+	register
+
+} {} {}} {C:/Users/ckdtj/Quartus Project/cpu/src/mux21.v} {1 {vlog -work work -stats=none {C:/Users/ckdtj/Quartus Project/cpu/src/mux21.v}
+Model Technology ModelSim - Intel FPGA Edition vlog 10.5b Compiler 2016.10 Oct  5 2016
+-- Compiling module mux21
+
+Top level modules:
+	mux21
+
+} {} {}} {C:/Users/ckdtj/Quartus Project/cpu/test/tb_control.v} {1 {vlog -work work -stats=none {C:/Users/ckdtj/Quartus Project/cpu/test/tb_control.v}
+Model Technology ModelSim - Intel FPGA Edition vlog 10.5b Compiler 2016.10 Oct  5 2016
+-- Compiling module tb_control
+
+Top level modules:
+	tb_control
+
+} {} {}}
