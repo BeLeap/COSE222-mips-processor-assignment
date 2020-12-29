@@ -16,6 +16,6 @@ module memory(
         end
     end
 
-    assign read_data = MemWrite ? write_data : mem[addr];
+    assign read_data = MemRead ? mem[addr] : write_data;
 
 endmodule
